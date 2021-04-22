@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2_Solvery", "Task2_Solvery\Task2_Solvery.csproj", "{23DA1920-F0A5-450C-839B-7CC897688705}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23DA1920-F0A5-450C-839B-7CC897688705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23DA1920-F0A5-450C-839B-7CC897688705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23DA1920-F0A5-450C-839B-7CC897688705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23DA1920-F0A5-450C-839B-7CC897688705}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF3D750B-9A67-4C93-AF6C-1EB52508EC1A}
+	EndGlobalSection
+EndGlobal
