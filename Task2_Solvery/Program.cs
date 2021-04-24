@@ -1,5 +1,7 @@
-﻿using System;
+﻿using OfficeOpenXml;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Task2_Solvery
@@ -38,6 +40,28 @@ namespace Task2_Solvery
 
             var element6 = list.Where(x => x.StartsWith('В')).OrderBy(x => x.Length).Last(); // начинаются на В сортировка по возрастанию берем последний
             Console.WriteLine(element6);
+
+            ReadExcel("Ремонт все филиалы.xlsx");
+        }
+
+        private static void ReadExcel(string path)
+        {
+            using (var excelPackage = new ExcelPackage(new FileInfo(path)))
+            {
+                ExcelWorksheet firstWorksheet = excelPackage.Workbook.Worksheets[0];
+                ExcelWorksheet secondtWorksheet = excelPackage.Workbook.Worksheets[1];
+                ExcelWorksheet thridWorksheet = excelPackage.Workbook.Worksheets[2];
+                ExcelWorksheet fourWorksheet = excelPackage.Workbook.Worksheets[3];
+                ExcelWorksheet fiveWorksheet = excelPackage.Workbook.Worksheets[4];
+
+                for (int i = 1; i <= firstWorksheet.Dimension.Columns; i++)
+                {
+                    for (int j = 1; j <= firstWorksheet.Dimension.Rows; j++)
+                    {
+                        Console.Write(firstWorksheet.Cells[j,i].Value);
+                    }
+                }
+            }
         }
     }
 
