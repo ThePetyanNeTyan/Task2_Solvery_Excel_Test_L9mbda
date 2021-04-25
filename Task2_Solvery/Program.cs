@@ -54,14 +54,21 @@ namespace Task2_Solvery
                 ExcelWorksheet fourWorksheet = excelPackage.Workbook.Worksheets[3];
                 ExcelWorksheet fiveWorksheet = excelPackage.Workbook.Worksheets[4];
 
-                for (int i = 1; i <= firstWorksheet.Dimension.Columns; i++)
+                for (int i = 1; i <= firstWorksheet.Dimension.Rows; i++)
                 {
-                    for (int j = 1; j <= firstWorksheet.Dimension.Rows; j++)
+                    for (int j = 1; j <= firstWorksheet.Dimension.Columns; j++)
                     {
-                        Console.Write(firstWorksheet.Cells[j,i].Value);
+                        Console.Write(firstWorksheet.Cells[i, j].Value + " ");
                     }
+                    Console.WriteLine();
                 }
             }
+        }
+
+        private static void WriteExcel(string path, string fileName)
+        {
+            var fullPath = Path.Combine(path, fileName);
+            
         }
     }
 
