@@ -42,6 +42,7 @@ namespace Task2_Solvery
             Console.WriteLine(element6);
 
             ReadExcel("Ремонт все филиалы.xlsx");
+            WriteExcel("superTest.xlsx");
         }
 
         private static void ReadExcel(string path)
@@ -65,10 +66,21 @@ namespace Task2_Solvery
             }
         }
 
-        private static void WriteExcel(string path, string fileName)
+        private static void WriteExcel(string fileName)
         {
-            var fullPath = Path.Combine(path, fileName);
-            
+            var fullPath = Path.Combine(fileName);
+            using (var excelPackage = new ExcelPackage(new FileInfo("Ремонт все филиалы.xlsx")))
+            {
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets["Коломна"];
+                for (int i = 1; i <= worksheet.Dimension.Rows; i++)
+                {
+                    if (worksheet.Index % 2 == 0)
+                    {
+                        worksheet.Cells[i, 5].Value = "SUPER_HACKING";
+                    }
+                }
+                excelPackage.SaveAs(new FileInfo(fullPath));
+            }    
         }
     }
 
